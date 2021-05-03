@@ -1,0 +1,5 @@
+name: PlatinumWorlds
+main: com.gmail.Annarkwin.Platinum.Worlds.Worlds
+version: 1.0
+api-version: 1.16
+depend: [PlatinumAPI]
