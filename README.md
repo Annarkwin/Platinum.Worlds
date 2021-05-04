@@ -1,4 +1,4 @@
-# Platinum.Worlds
+# Platinum Worlds
 
 Platinum Worlds is designed as a simple featured world management tool. It supports the following:
 
