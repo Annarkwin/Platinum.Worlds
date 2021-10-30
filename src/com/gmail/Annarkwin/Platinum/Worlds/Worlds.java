@@ -1,6 +1,12 @@
 package com.gmail.Annarkwin.Platinum.Worlds;
 
+import org.bukkit.World.Environment;
+import org.bukkit.WorldCreator;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import com.gmail.Annarkwin.Platinum.API.PlatinumMainCommand;
+import com.gmail.Annarkwin.Platinum.Worlds.Commands.Worlds.CommandWorlds;
+import com.gmail.Annarkwin.Platinum.Worlds.Commands.Worlds.WorldsGo;
 
 public class Worlds extends JavaPlugin
 {
@@ -21,7 +27,11 @@ public class Worlds extends JavaPlugin
 		// Initialize update event
 
 		// Load Worlds
-//		Bukkit.createWorld(WorldCreator.name("TestWorld1"));
+		WorldCreator aincrad = WorldCreator.name("Aincrad");
+		aincrad.environment(Environment.NORMAL);
+		aincrad.seed(8675309);
+		aincrad.createWorld();
+
 	}
 
 	@Override
@@ -38,6 +48,12 @@ public class Worlds extends JavaPlugin
 
 	public void enableCommands()
 	{
+
+		PlatinumMainCommand worlds = new CommandWorlds("worlds", "platinum.command.worlds", true, "Manage worlds",
+				"/worlds help (page)");
+		worlds.addChildCommand(
+				new WorldsGo("go", "platinum.command.worlds.go", true, "Teleport to a world", "/worlds go <world>"));
+		getCommand("Worlds").setExecutor(worlds);
 
 	}
 

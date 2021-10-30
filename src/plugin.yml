@@ -3,3 +3,10 @@ main: com.gmail.Annarkwin.Platinum.Worlds.Worlds
 version: 1.0
 api-version: 1.16
 depend: [PlatinumAPI]
+loadbefore: [PlatinumMMO]
+
+commands:
+  Worlds:
+    usage: /Worlds help
+    description: "Manage Worlds"
+    permission: platinum.command.worlds
